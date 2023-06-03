@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>자기소개 웹페이지</title>
+  <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: white;
+      z-index: 1;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+    }
+
+    .menu-name {
+      margin-right: auto;
+      font-size: 30px;
+      font-weight: bold;
+      font-style: initial;
+    }
+
+    .menu-button {
+      margin-left: 10px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      align-items: center;
+      display: flex;
+    }
+
+    .content {
+      display: flex;
+      margin-top: 100px;
+    }
+
+    .left-section {
+      width: 30%;
+      height: 100vh;
+      background-color: blueviolet;
+      position: absolute;
+      z-index: -1;
+    }
+
+    .rectangle {
+      position: absolute;
+      left: 40%;
+      top: 6%;
+      width: 80%;
+      height: 80%;
+      background-color: plum;
+    }
+
+    .profile-image {
+      width: 180px;
+      position: absolute;
+      top: 15%;
+      left: 60%;
+      border-radius: 70%;
+      overflow: hidden;
+    }
+
+    .home-text {
+      position: absolute;
+      top: 12%;
+      left: 140%;
+      font-size: 80px;
+      color: black;
+      text-shadow: 2px 2px 2px black;
+    }
+
+    #home-content {
+      position: relative;
+      margin-top: 220px;
+      margin-left: 660px;
+      text-align: left;
+      line-height: 200%;
+      margin-bottom: 50px;
+    }
+
+    footer {
+      position: static;
+      bottom: 0;
+      background-color: #f2f2f2;
+      padding: 14px;
+      text-align: center;
+      font-size: 12px;
+      color: #777777;
+      width: 100%;
+    }
+
+    .contact-info {
+      position: absolute;
+      top: 40%;
+      left: 60%;
+      margin-top: 18px;
+      color: black;
+      font-size: 16px;
+      text-align: center;
+      line-height: 250%;
+
+    }
+
+    .content-next {
+      background-color: plum;
+      height: 100%;
+      text-align: center;
+      width: 100%;
+      position: relative;
+      line-height: 270%;
+    }
+
+    .resume-section {
+      margin-bottom: 40px;
+    }
+
+    .resume-section li {
+      margin-bottom: 5px;
+    }
+
+    .resume-section p {
+      margin-bottom: 15px;
+      color: gray;
+    }
+
+    .content-next h1 {
+      font-weight: bold;
+      text-shadow: 1px 1px 1px black;
+    }
+
+    .content-next h3 {
+      font-size: 26px;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+      line-height: 300%;
+    }
+
+    .grid-item {
+      border: 1px solid black;
+      padding: 20px;
+    }
+
+</style>
+
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $(".menu-button").click(function() {
+        var page = $(this).attr("data-page");
+        $(".content").hide();
+        $("#" + page).show();
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <nav class="menu">
+      <div class="menu-name">Kyeonghwan Kim</div>
+      <button class="menu-button" data-page="home">HOME</button>
+      &nbsp; &nbsp;
+      <button class="menu-button" data-page="resume">RESUME</button>
+      &nbsp; &nbsp;
+      <button class="menu-button" data-page="travel">TRAVEL</button>
+    </nav>
+  </header>
+
+  <div id="home" class="content">
+    <div class="left-section">
+      <div class="rectangle"></div>
+      <div class="home-text">WELCOME!</div>
+        <img class="profile-image" src="images/스크린샷 2023-05-26 234841.png" alt="프로필 사진">
+      <div class="contact-info">
+        <h3>TEL</h3>
+          <p>+82 10-5597-7143</p>
+        <h3>E-mail</h3>
+          <a href="mailto:khkim7557@gmail.com">khkim7557@gmail.com</a>
+        <h3>SNS</h3>
+          <a href="https://www.instagram.com/k_hwan.1005/">
+            <img src="images/instagram.png" width="25%" height="25%"></a>
+            &nbsp;
+          <a href="https://www.facebook.com/profile.php?id=100011353878488">
+            <img src="images/facebook.png" width="25%" height="25%"></a>
+      </div>
+    </div>
+    <div id="home-content">
+      <h3>강원대학교 컴퓨터공학과 22학번 김경환</h3>
+      <br>
+      <p>안녕하세요! 강원대학교 컴퓨터공학과 21살 22학번 김경환입니다.</p>
+      <p>2022년에 산림소재공학부에 재학하다가 2023년에 컴퓨터공학과로 전과했습니다.</p> 
+      <p>컴퓨터공학과의 다양한 수업을 들으면서 적성에 맞는 분야를 찾아나가는 중입니다.</p>
+      <br>
+      <h3>취미</h3>
+      <br>
+      <p>제 취미는 운동입니다. 그 중에서도 축구를 가장 좋아합니다.</p> 
+      <p>초등학교 때부터 현재까지 거의 항상 축구부에 들어가 활동했었으며</p> 
+      <p>컴퓨터공학과 축구동아리 "클래스"에서도 뛰고 있습니다.</p>
+      <p>2학기에 있는 백령체전에서 컴퓨터공학과 소속으로 좋은 성적을 내도록 노력하겠습니다.</p>
+    </div>
+  </div>
+
+  <div id="resume" class="content" style="display: none;">
+    <div class="content-next">
+      <br>
+      <h1>Resume</h1>
+      <br>
+      <div class="resume-section">
+        <h3>EXPERIENCE</h3>
+        <ul>
+          <li>High school Vice President</li>
+          <p>2021.3 ---- 2021.11</p>
+          <li>High school Soccer Team</li>
+          <p>2019.3 ---- 2021.1</p>
+          <li>Youth Automous Committe</li>
+          <p>2016.3 ---- 2017</p>
+          <li>Vice President of Elementary School</li>
+          <p>2015 ---- 2016</p>
+        </ul>
+      </div>
+      <div class="resume-section">
+        <h3>EDUCATION</h3>
+        <ul>
+          <li>Kangwon National University, Department of Forest Materials Engineering</li>
+          <p>2022.3 ---- 2023.2</p>
+          <li>Kangwon National University, Department of Computer Engineering</li>
+          <p>2023.3 ---- current</p>
+        </ul>
+      </div>
+      <div class="resume-section">
+        <h3>CERTIFICATE</h3>
+        <ul>
+          <li>Driver's License</li>
+          <li>PowerPoint and Word Certification</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div id="travel" class="content" style="display: none;">
+    <div class="content-next">
+        <br>
+        <h1>TRAVEL</h1>
+        <br>
+        <div class="travel-section">
+            <h3>CITY AND COUNTRY</h3>
+            <br>
+            <div class="grid-container">
+                <div class="grid-item">
+                    <h4>오사카</h4>
+                    <p>오사카 유니버셜 스튜디오, 하루카스 300 전망대</p>
+                    <img src="images/IMG_일본.jpg" alt="일본" width="150px" height="150px">
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <img src="images/IMG_일본_2.jpg" alt="일본" width="150px" height="150px">
+                </div>
+                <div class="grid-item">
+                    <h4>경주</h4>
+                    <p>황리단길</p>
+                    <img src="images/IMG_경주 동궁.jpg" alt="경주" width="150px" height="150px">
+                    <img src="images/IMG_경주2.jpg" alt="경주" width="150px" height="150px">
+                </div>
+                <div class="grid-item">
+                    <h4>전주</h4>
+                    <p>한옥마을</p>
+                    <img src="images/IMG_전주.jpg" alt="전주" width="150px" height="150px">
+                    <img src="images/IMG_전주2.jpg" alt="전주" width="150px" height="150px">
+                </div>
+                <div class="grid-item">
+                    <h4>강릉</h4>
+                    <p>아르떼뮤지엄, 해변</p>
+                    <img src="images/IMG_강릉 바다.JPG" alt="강릉" width="150px" height="150px">
+                    <img src="images/IMG_강릉 아르.jpg" alt="강릉" width="150px" height="150px">
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Created by Kyeonghwan Kim on May 31, 2023</p>
+    <p>Emoticon Source: flaticon</p>
+  </footer>
+</body>
+</html>
